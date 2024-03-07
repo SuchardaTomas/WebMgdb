@@ -24,7 +24,7 @@ exports.getBookById = async (req, res) => {
         payload: result,
       });
     }
-    res.status(404).send({ msg: "Book not found " });
+    res.status(404).send({ msg: "Book not found" });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -50,6 +50,7 @@ exports.updateBook = async (req, res) => {
       name: req.body.name,
       author: req.body.author,
       pages: req.body.pages,
+      image: req.body.image,
     };
     const result = await Book.findByIdAndUpdate(req.params.id, data);
     if (result) {
@@ -72,6 +73,7 @@ exports.createBook = async (req, res) => {
       name: req.body.name,
       author: req.body.author,
       pages: req.body.pages,
+      image: req.body.image,
     });
     const result = await data.save();
     if (result) {

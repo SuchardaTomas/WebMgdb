@@ -79,7 +79,7 @@ export default function BookUpdateForm() {
           required
           name="author"
           placeholder="Enter name of author"
-          defaultValue={book.legs}
+          defaultValue={book.author}
           onChange={(e) => handleChange(e)}
         />
         <input
@@ -88,6 +88,14 @@ export default function BookUpdateForm() {
           name="pages"
           placeholder="Enter number of pages"
           defaultValue={book.pages}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="file"
+          required
+          name="image"
+          placeholder="image of book"
+          defaultValue={book.image}
           onChange={(e) => handleChange(e)}
         />
         <button onClick={handlePost}>Update book</button>

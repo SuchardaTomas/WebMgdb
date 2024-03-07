@@ -41,15 +41,22 @@ export default function BookCreateForm() {
         <input
           type="text"
           required
-          name="legs"
+          name="author"
           placeholder="Enter name of author"
           onChange={(e) => handleChange(e)}
         />
         <input
           type="number"
           required
-          name="color"
+          name="pages"
           placeholder="Enter number of pages"
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          type="file"
+          required
+          name="image"
+          placeholder="image of book"
           onChange={(e) => handleChange(e)}
         />
         <button onClick={handlePost}>Create book</button>
