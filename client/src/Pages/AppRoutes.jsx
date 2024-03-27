@@ -8,17 +8,22 @@ import BookUpdateForm from "./BookUpdateForm/BookUpdateForm";
 import CreatedBook from "./BookCreateForm/CreatedBook";
 import BookDeleted from "./BookView/BookDeleted";
 
+import ErrorPage from "./ErrorPages/ErrorPage";
+
 export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
+
         <Route path="/book/:id" element={<BookView />} />
         <Route path="/books" element={<BookList />} />
         <Route path="/createbook" element={<BookCreateForm />} />
         <Route path="/updatebook/:id" element={<BookUpdateForm />} />
         <Route path="/createdbook/:id" element={<CreatedBook />} />
         <Route path="/deletedbook/:id" element={<BookDeleted />} />
+
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );
